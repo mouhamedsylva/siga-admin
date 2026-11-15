@@ -27,7 +27,7 @@ npm run build      # → dist/
 ```
 
 L'API sert `dist/` sous **`/backoffice`** (variable `ADMIN_UI_DIR`, par défaut `../siga-admin/dist`).
-Depuis la racine du dépôt, `npm run build` construit les deux projets ; `railway.json` fait de même sur Railway.
+En production, l'image Docker de `siga-api/deploy` construit les deux projets (voir `siga-api/deploy/DEPLOIEMENT.md`).
 
 ## Tests
 
