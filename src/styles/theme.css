@@ -1,0 +1,140 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+
+/* Mode sombre piloté par la classe .dark sur <html> (ThemeProvider) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Palette « Indigo nuit ».
+ * La couleur principale n'est ni verte, ni orange, ni rouge :
+ * ces trois couleurs sont réservées aux verdicts.
+ */
+:root {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --border: #e2e8f0;
+  --foreground: #0f172a;
+  --muted-foreground: #64748b;
+
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-foreground: #ffffff;
+  --primary-soft: #eef2ff;
+  --ring: #6366f1;
+
+  --sidebar: #1e1b4b;
+  --sidebar-foreground: #e0e7ff;
+  --sidebar-muted: #a5b4fc;
+  --sidebar-active: #312e81;
+
+  --accent: #06b6d4;
+  --accent-soft: #cffafe;
+
+  --coherent: #15803d;
+  --coherent-soft: #dcfce7;
+  --douteux: #b45309;
+  --douteux-soft: #fef3c7;
+  --faux: #b91c1c;
+  --faux-soft: #fee2e2;
+
+  --danger: #b91c1c;
+  --danger-hover: #991b1b;
+
+  color-scheme: light;
+}
+
+.dark {
+  --background: #0b0f1a;
+  --surface: #121829;
+  --surface-muted: #182036;
+  --border: #1f2a44;
+  --foreground: #e2e8f0;
+  --muted-foreground: #94a3b8;
+
+  --primary: #818cf8;
+  --primary-hover: #a5b4fc;
+  --primary-foreground: #0b0f1a;
+  --primary-soft: #1e1b4b;
+  --ring: #818cf8;
+
+  --sidebar: #0e0b2e;
+  --sidebar-foreground: #e0e7ff;
+  --sidebar-muted: #8b93d8;
+  --sidebar-active: #25205e;
+
+  --accent: #22d3ee;
+  --accent-soft: #083344;
+
+  --coherent: #4ade80;
+  --coherent-soft: #14532d;
+  --douteux: #fbbf24;
+  --douteux-soft: #451a03;
+  --faux: #f87171;
+  --faux-soft: #450a0a;
+
+  --danger: #f87171;
+  --danger-hover: #fca5a5;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-muted: var(--sidebar-muted);
+  --color-sidebar-active: var(--sidebar-active);
+
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+
+  --color-coherent: var(--coherent);
+  --color-coherent-soft: var(--coherent-soft);
+  --color-douteux: var(--douteux);
+  --color-douteux-soft: var(--douteux-soft);
+  --color-faux: var(--faux);
+  --color-faux-soft: var(--faux-soft);
+
+  --color-danger: var(--danger);
+  --color-danger-hover: var(--danger-hover);
+
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
