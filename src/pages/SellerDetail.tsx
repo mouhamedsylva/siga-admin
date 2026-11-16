@@ -242,7 +242,7 @@ function PaymentDialog({ seller }: { seller: SellerDetail }) {
           toast.success(
             res.notified
               ? 'Abonnement activé — le vendeur a été prévenu sur WhatsApp'
-              : 'Abonnement activé (vendeur non prévenu : hors fenêtre de 24 h)',
+              : 'Abonnement activé — vendeur non prévenu sur WhatsApp (hors fenêtre de 24 h ou envoi impossible) : préviens-le toi-même',
           );
           setOpen(false);
           reset();
